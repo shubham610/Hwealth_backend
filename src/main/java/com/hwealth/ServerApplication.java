@@ -1,11 +1,11 @@
-package com.stripe.sample;
+package com.hwealth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.stripe.sample")
+@ComponentScan
 public class ServerApplication {
 
     public static void main(String[] args) {
