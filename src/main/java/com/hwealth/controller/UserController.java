@@ -67,7 +67,7 @@ public class UserController {
 	@PostMapping("/login")
 	public ResponseEntity<User> userLogin(@RequestBody User User) {
 		try {
-			return  new ResponseEntity<User> (service.login(User.getUserName(),User.getUserPassword()),HttpStatus.FOUND);
+			return  new ResponseEntity<User> (service.login(User.getUserName(),User.getUserPassword()),HttpStatus.OK);
 			}
 			catch (UserException e) {
 				return new ResponseEntity(e.getMessage(),HttpStatus.NOT_FOUND);
