@@ -25,7 +25,7 @@ public class HealthInsuranceService {
 	}
 	public List<HealthInsurance> getAllinsurance() {
 		if (healthDao.findAll().size() == 0)
-			throw new HealthException("Vehicle Insurance list is empty");
+			throw new HealthException("Health Insurance list is empty");
 		else
 			return healthDao.findAll();
 	}

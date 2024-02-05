@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,5 +47,14 @@ public class VehicleInsuranceController {
 			return new ResponseEntity(e.getMessage(),HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	@GetMapping("/user/{userId}")
+	public ResponseEntity<List<VehicleInsurance>> getUserVehicleInsurance(@PathVariable("userId") long userId) {
+		try {
+				
+		return  new ResponseEntity<List<VehicleInsurance>>(vehicleService.getAllinsurance().stream().filter(a->a.getUser().getUserId()==userId).toList(),HttpStatus.OK) ;
+		}
+		catch (VehicleException e) {
+			return new ResponseEntity(e.getMessage(),HttpStatus.NOT_FOUND);
+		}
+	}
 }
