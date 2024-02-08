@@ -5,7 +5,7 @@ spring:
         column_ordering_strategy:  legacy
     show-sql:  true
     hibernate:
-      ddl-auto:  create
+      ddl-auto:  update
   datasource:
     url:  jdbc:mysql://localhost:3306/hwealth_insurance
     username:  root

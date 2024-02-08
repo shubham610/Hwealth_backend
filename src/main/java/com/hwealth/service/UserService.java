@@ -62,7 +62,7 @@ public class UserService {
 		if (findByName.isPresent())
 			return findByName.get();
 		else
-			throw new UserException("User not present");
+			throw new UserException("UserName or Passwoord is incorrect");
 	}
 	
 
