@@ -22,7 +22,7 @@ public class UserService {
 		Optional<User> findByName = dao.checkUserName(c.getUserName());
 		Optional<User> findByPhone = dao.checkUserPhoneNo(c.getUserPhoneNo());
 		if (findByName.isPresent())
-			throw new UserException("UserName already Used");
+			throw new UserException("UserName already Used....");
 		else if(findByPhone.isPresent())
 			throw new UserException("UserPhoneNo already Used");
 		else
